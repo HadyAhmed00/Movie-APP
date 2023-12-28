@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
-//    private val movieRepository = MovieRepository(RetroInstance.apiService)
+
 
     val userIntent = Channel<MainIntent>(Channel.UNLIMITED)
 
