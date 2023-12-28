@@ -39,8 +39,6 @@ class Home : Fragment() {
             setUpRc()
             observe()
         }
-
-
         return binding.root
     }
 
@@ -53,7 +51,6 @@ class Home : Fragment() {
         adapter = viewAdapter
         layoutManager = LinearLayoutManager(requireContext())
     }
-
     private fun observe() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.state.collect {
@@ -78,5 +75,4 @@ class Home : Fragment() {
             }
         }
     }
-
 }
