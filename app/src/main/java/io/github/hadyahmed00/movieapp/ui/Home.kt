@@ -3,6 +3,7 @@ package io.github.hadyahmed00.movieapp.ui
 import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,14 +19,13 @@ import kotlinx.coroutines.launch
 
 class Home : Fragment() {
 
-
-
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(this)[MainViewModel::class.java]
     }
 
     private lateinit var binding:FragmentHomeBinding
     private lateinit var viewAdapter: MovieAdapter
+    private val TAG = "Home Fragment"
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,9 +43,6 @@ class Home : Fragment() {
 
         return binding.root
     }
-
-
-
 
     private fun setUpRc()  = binding.movieRc.apply {
 
@@ -68,7 +65,8 @@ class Home : Fragment() {
                     }
                     is MainState.Error -> {
                         binding.progressBar.isVisible = false
-                        Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Check your connection", Toast.LENGTH_SHORT).show()
+                        Log.i(TAG, it.error.toString())
                     }
                     is MainState.MoviesData -> {
                         binding.progressBar.isVisible = false
