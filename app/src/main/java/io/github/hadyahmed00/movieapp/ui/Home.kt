@@ -1,19 +1,21 @@
 package io.github.hadyahmed00.movieapp.ui
 
 import android.os.Build
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresExtension
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.github.hadyahmed00.movieapp.Adapters.MovieAdapter
+import io.github.hadyahmed00.movieapp.R
 import io.github.hadyahmed00.movieapp.databinding.FragmentHomeBinding
 import kotlinx.coroutines.launch
 
@@ -39,13 +41,16 @@ class Home : Fragment() {
             setUpRc()
             observe()
         }
+
         return binding.root
     }
 
     private fun setUpRc()  = binding.movieRc.apply {
 
         viewAdapter = MovieAdapter(MovieAdapter.OnClickListener{
-
+            val bundle = Bundle()
+            bundle.putParcelable("movie_item", it   )
+            findNavController().navigate(R.id.action_home2_to_detailsFragment,bundle)
             Toast.makeText(requireContext(), it.title, Toast.LENGTH_SHORT).show()
         })
         adapter = viewAdapter

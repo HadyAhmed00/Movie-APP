@@ -7,5 +7,17 @@
     <fragment
         android:id="@+id/home2"
         android:name="io.github.hadyahmed00.movieapp.ui.Home"
-        android:label="Home" />
+        android:label="Home" >
+        <action
+            android:id="@+id/action_home2_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="io.github.hadyahmed00.movieapp.DetailsFragment"
+        android:label="DetailsFragment" >
+        <argument
+            android:name="movie_item"
+            app:argType="io.github.hadyahmed00.movieapp.models.Movie" />
+    </fragment>
 </navigation>
