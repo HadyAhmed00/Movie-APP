@@ -15,40 +15,40 @@
 
         <ImageView
             android:id="@+id/poster_img"
+            setImageByUrl="@{movie.poster}"
             android:layout_width="134dp"
             android:layout_height="221dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:src="@drawable/baseline_14mp_24"
-            setImageByUrl="@{movie.poster}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/title_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="39dp"
             android:text="@{movie.title}"
-            tools:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/poster_img"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="TextView" />
 
         <TextView
             android:id="@+id/overview_tv"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="10dp"
-            tools:text="TextView"
             android:text="@{movie.overview}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/poster_img" />
+            app:layout_constraintTop_toBottomOf="@+id/poster_img"
+            tools:text="TextView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

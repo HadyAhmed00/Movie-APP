@@ -1,4 +1,4 @@
-package io.github.hadyahmed00.movieapp
+package io.github.hadyahmed00.movieapp.util
 
 import android.widget.ImageView
 import androidx.core.net.toUri

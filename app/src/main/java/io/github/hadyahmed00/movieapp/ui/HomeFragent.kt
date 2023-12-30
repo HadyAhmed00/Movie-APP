@@ -13,13 +13,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import io.github.hadyahmed00.movieapp.Adapters.MovieAdapter
 import io.github.hadyahmed00.movieapp.R
 import io.github.hadyahmed00.movieapp.databinding.FragmentHomeBinding
 import kotlinx.coroutines.launch
 
-class Home : Fragment() {
+class HomeFragent : Fragment() {
 
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(this)[MainViewModel::class.java]
@@ -54,7 +54,7 @@ class Home : Fragment() {
             Toast.makeText(requireContext(), it.title, Toast.LENGTH_SHORT).show()
         })
         adapter = viewAdapter
-        layoutManager = LinearLayoutManager(requireContext())
+        layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
     }
     private fun observe() {
         viewLifecycleOwner.lifecycleScope.launch {

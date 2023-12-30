@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface MovieApi {
 
     @GET("HadyAhmed00/Movie-Static-API/main/Main.json")
-    suspend fun getMovies():Response<List<Movie>>
+    public suspend fun getMovies():Response<List<Movie>>
 }

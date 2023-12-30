@@ -1,4 +1,4 @@
-package io.github.hadyahmed00.movieapp
+package io.github.hadyahmed00.movieapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import io.github.hadyahmed00.movieapp.databinding.FragmentDetailsBinding
-import io.github.hadyahmed00.movieapp.ui.MainViewModel
 
 class DetailsFragment : Fragment() {
 
