@@ -51,7 +51,7 @@ class MainViewModel(app : Application) : AndroidViewModel(app) {
 //
             _state.value = MainState.Loading
             _state.value = try {
-                MainState.MoviesData(database.movieDao.getAllMovies())
+                MainState.MoviesData(repo.fitchMovies())
             } catch (e: Exception) {
                 MainState.Error(e.stackTraceToString())
             }

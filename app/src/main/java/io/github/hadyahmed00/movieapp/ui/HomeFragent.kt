@@ -14,6 +14,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import io.github.hadyahmed00.movieapp.Adapters.MovieAdapter
 import io.github.hadyahmed00.movieapp.R
@@ -52,7 +53,8 @@ class HomeFragent : Fragment() {
             Toast.makeText(requireContext(), it.title, Toast.LENGTH_SHORT).show()
         })
         adapter = viewAdapter
-        layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+//        layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        layoutManager = LinearLayoutManager(requireContext())
     }
     private fun observe() {
         viewLifecycleOwner.lifecycleScope.launch {

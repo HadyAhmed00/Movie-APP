@@ -23,5 +23,6 @@
     <string name="content">Note Conent</string>
     <string name="work">Work</string>
     <string name="home">Home</string>
-    <string name="rat">Rating</string>
+    <string name="rat">Rating :</string>
+    <string name="descripion">overview</string>
 </resources>
