@@ -22,9 +22,7 @@ class DetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentDetailsBinding.inflate(layoutInflater)
-//        binding.movie = arguments?.getParcelable("movie_item")
         viewModel.clickedMovie.observe(viewLifecycleOwner, Observer {
             binding.movie = it
         })
