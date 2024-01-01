@@ -2,4 +2,26 @@
     <string name="app_name">MovieApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="sing_in">Sing In</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="con_password">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="for_pass">Forget Password?</string>
+    <string name="do_have_ac">"Do not have an account?  "</string>
+    <string name="regester">Register</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="alrady">"Already Have an account  "</string>
+    <string name="wellcom">Wellcome back !</string>
+    <string name="user">User Name</string>
+    <string name="search">Search</string>
+    <string name="edit">Edit</string>
+    <string name="favorite">Favorite</string>
+    <string name="more">More</string>
+    <string name="title">Title</string>
+    <string name="content">Note Conent</string>
+    <string name="work">Work</string>
+    <string name="home">Home</string>
+    <string name="rat">Rating</string>
 </resources>

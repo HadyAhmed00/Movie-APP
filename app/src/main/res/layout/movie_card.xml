@@ -13,8 +13,9 @@
         android:id="@+id/card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        app:cardCornerRadius="20dp">
+        android:layout_margin="15dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,14 +42,29 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_14mp_24" />
 
-            <TextView
-                android:id="@+id/textView15"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="@{movie.rating.toString()}"
-                android:textColor="@color/black"
-                tools:text="Sep 22 , 2023" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/rat"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{movie.rating.toString()}"
+                    android:textColor="@color/black"
+                    tools:text="Sep 22 , 2023" />
+
+            </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

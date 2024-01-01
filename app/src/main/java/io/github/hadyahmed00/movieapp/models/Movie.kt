@@ -27,6 +27,5 @@ data class Movie(
     val overview : String?
 
 
-) : Parcelable{
+) : Parcelable
 
-}
