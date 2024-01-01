@@ -2,6 +2,8 @@ package io.github.hadyahmed00.movieapp.ui
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.github.hadyahmed00.movieapp.database.MovieDatabase
@@ -24,8 +26,14 @@ class MainViewModel(app : Application) : AndroidViewModel(app) {
     private val _state: MutableStateFlow<MainState> = MutableStateFlow(MainState.Init)
     val state: StateFlow<MainState> get() = _state
 
+    private val _clickedMovie = MutableLiveData<Movie>()
+    val clickedMovie : LiveData<Movie> get() = _clickedMovie
     init {
         handleIntent()
+    }
+
+    fun setClickedMovie(movie : Movie){
+        _clickedMovie.value = movie
     }
 
     private fun handleIntent() {

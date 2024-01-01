@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import io.github.hadyahmed00.movieapp.databinding.FragmentDetailsBinding
 
 class DetailsFragment : Fragment() {
 
-    private val viewModel:MainViewModel by lazy {
-        ViewModelProvider(this).get(MainViewModel::class.java)
-    }
+    private val viewModel:MainViewModel by activityViewModels()
 
     private lateinit var binding: FragmentDetailsBinding
 
@@ -24,8 +24,10 @@ class DetailsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentDetailsBinding.inflate(layoutInflater)
-        binding.movie = arguments?.getParcelable("movie_item")
-
+//        binding.movie = arguments?.getParcelable("movie_item")
+        viewModel.clickedMovie.observe(viewLifecycleOwner, Observer {
+            binding.movie = it
+        })
 
 
         return binding.root

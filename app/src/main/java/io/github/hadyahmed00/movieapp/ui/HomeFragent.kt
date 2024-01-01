@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresExtension
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
@@ -21,9 +22,7 @@ import kotlinx.coroutines.launch
 
 class HomeFragent : Fragment() {
 
-    private val viewModel: MainViewModel by lazy {
-        ViewModelProvider(this)[MainViewModel::class.java]
-    }
+    private val viewModel: MainViewModel by activityViewModels()
 
     private lateinit var binding:FragmentHomeBinding
     private lateinit var viewAdapter: MovieAdapter
@@ -48,9 +47,8 @@ class HomeFragent : Fragment() {
     private fun setUpRc()  = binding.movieRc.apply {
 
         viewAdapter = MovieAdapter(MovieAdapter.OnClickListener{
-            val bundle = Bundle()
-            bundle.putParcelable("movie_item", it   )
-            findNavController().navigate(R.id.action_home2_to_detailsFragment,bundle)
+            viewModel.setClickedMovie(it)
+            findNavController().navigate(R.id.action_home2_to_detailsFragment)
             Toast.makeText(requireContext(), it.title, Toast.LENGTH_SHORT).show()
         })
         adapter = viewAdapter
